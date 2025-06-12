@@ -34,7 +34,7 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm run build -- --base=/vite-multipage-starter/
+        run: npm run build 
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
