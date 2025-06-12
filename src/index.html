@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Supabase</title>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+   
+   <link href="/src/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen">
+<div id="app" class="container mx-auto px-4 sm:px-6 md:px-8 py-8 max-w-6xl">
+    <header class="mb-8">
+      <nav class="flex justify-between items-center">
+<h1 class="text-3xl sm:text-4xl md:text-5xl text-gray-800 font-bold">Blog Supabase</h1>
+        <div id="auth-section" class="flex items-center space-x-4"></div>
+      </nav>
+    </header>
+    <main id="content"></main>
+    
+    <div id="modal" class="fixed inset-0 backdrop-blur-lg hidden items-center justify-center p-4 z-50">
+<div class="bg-white rounded-md p-6 w-full max-w-md sm:max-w-lg md:max-w-md drop-shadow-xl">
+        <h2 id="modal-title" class="text-xl font-bold mb-4"></h2>
+        <form id="article-form" class="space-y-4">
+          <input type="hidden" id="article-id">
+          <div>
+            <label for="title" class="block mb-1">Tytuł</label>
+            <input type="text" id="title" required class="w-full px-3 py-2 border rounded">
+          </div>
+          <div>
+            <label for="subtitle" class="block mb-1">Podtytuł</label>
+            <input type="text" id="subtitle" class="w-full px-3 py-2 border rounded">
+          </div>
+          <div>
+            <label for="author" class="block mb-1">Autor</label>
+            <input type="text" id="author" required class="w-full px-3 py-2 border rounded">
+          </div>
+          <div>
+            <label for="article-content" class="block mb-1">Treść</label>
+            <textarea id="article-content" rows="4" required class="w-full px-3 py-2 border rounded"></textarea>
+          </div>
+          <div class="flex justify-end space-x-2">
+            <button type="button" onclick="closeModal()" class="px-4 py-2 border rounded hover:bg-gray-100 transition">
+              Anuluj
+            </button>
+            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+              Zapisz
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
