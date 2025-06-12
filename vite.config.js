@@ -2,7 +2,6 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import { glob } from 'node:fs/promises'
-import tailwindcss from '@tailwindcss/vite'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -14,7 +13,7 @@ export default defineConfig(async () => {
   }
 
   return {
-    plugins: [tailwindcss()],
+    base: '/vite-multipage-starter/',
     root: resolve(__dirname, 'src'),
     build: {
       emptyOutDir: true,
